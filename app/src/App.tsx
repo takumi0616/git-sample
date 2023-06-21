@@ -1,4 +1,4 @@
-import React ,{ Fragment,useState , useEffect,useMemo} from 'react';
+import React ,{ Fragment,useState , useEffect ,useMemo} from 'react';
 
 //変数の宣言
 const message: string = 'こんにちは React!!'
@@ -119,7 +119,8 @@ function Counter() {
     </button>
   );
 }
-
+//usecallbackはuseMemoの関数版
+//useContextログイン状態とかに使う
 
 
 
