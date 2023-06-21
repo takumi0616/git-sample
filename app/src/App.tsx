@@ -1,4 +1,4 @@
-import React ,{ Fragment} from 'react';
+import React ,{ Fragment,useState , useEffect} from 'react';
 
 //変数の宣言
 const message: string = 'こんにちは React!!'
@@ -91,6 +91,32 @@ return (
   );
 };
 
+//React Hooks
+function Counter() {
+  const [count, setCount] = useState(1);
+  const [text, setText] = useState<string>('');
+  //useStateだけが再レンダリングの手段
+  //setCountが走った時にレンダリング
+  //型を示さなくていい
+  function handleClick() {
+    setCount(count + 1);
+    setCount(count * 2);//を増やすとこっちに確定する
+    console.log(count);//一個前のやつが反映
+  }
+  //useEffect
+  useEffect(() => {
+    // 副作用処理を記述
+    console.log(count);
+    setText(`${count} 回目`);//テンプレートリテラル
+  }, [count]);
+  //関数を実行するタイミングをレンダリング後まで遅らせる
+  return (
+    <button onClick={handleClick}>
+       {text}
+    </button>
+  );
+}
+
 
 
 
@@ -121,6 +147,7 @@ return (
 function App() {
   return (
     <div>
+      {Counter()}
       {element}
     {returnSt}
     {returnSt1}
