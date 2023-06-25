@@ -1,4 +1,4 @@
-import React ,{ Fragment,useState , useEffect ,useMemo} from 'react';
+import React ,{ Fragment,useState  ,useMemo} from 'react';
 
 //変数の宣言
 const message: string = 'こんにちは React!!'
